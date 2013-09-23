@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 namespace :deploy_user do
   desc "Create deploy user and app directory"
-  task :install, :roles => [:app, :web] do
+  task :install do
     # Create user
     sudo "useradd -m -s /bin/bash deploy"
 
