@@ -14,7 +14,7 @@ namespace :ruby do
     sudo "apt-add-repository --remove -y ppa:brightbox/ruby-ng"
     sudo "apt-add-repository -y ppa:brightbox/ruby-ng-experimental"
     sudo "apt-get -qq update"
-    apt_install "ruby#{ruby_version} rubygems"
+    apt_install "ruby#{ruby_version} rubygems ruby#{ruby_version}-dev"
 
     sudo "gem install bundler --no-rdoc --no-ri"
   end
