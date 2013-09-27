@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-set_default :ruby_version, "ruby1.9"
+set_default :ruby_version, "1.9.1" # Which is actually 1.9.3
 set_default :use_rmagick, false
 
 # This uses Brightbox's Ruby packages for Ubuntu
@@ -14,8 +14,7 @@ namespace :ruby do
     sudo "apt-add-repository --remove -y ppa:brightbox/ruby-ng"
     sudo "apt-add-repository -y ppa:brightbox/ruby-ng-experimental"
     sudo "apt-get -qq update"
-    apt_install 'ruby rubygems ruby-switch'
-    sudo "ruby-switch --set #{ruby_version}"
+    apt_install "ruby#{ruby_version} rubygems"
 
     sudo "gem install bundler --no-rdoc --no-ri"
   end
