@@ -17,7 +17,8 @@ Setting up new server(s)
 3. `git submodule add -b ubuntu12.04 git@github.com:singlebrook/capistrano-recipes.git config/install/recipes`
 4. `git submodule update --init`
 5. Create yourself a sudoer user on each server:
-  * `adduser [you] --ingroup sudo`
+  * `adduser [you]`
+  * `addgroup [you] sudo`
   * `su [you]`
   * add your public key to your `~/.ssh/authorized_keys`
   * set permissions: `chmod -R og-rwx ~/.ssh`
