@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+  DocumentRoot <%= deploy_to %>/current/public
+  ServerName <%= domain %>
+
+  TransferLog /var/log/apache2/access_log_<%= application %>
+  ErrorLog /var/log/apache2/error_log_<%= application %>
+
+  PassengerEnabled on
+  PassengerUser <%= deploy_user %>
+</VirtualHost>
