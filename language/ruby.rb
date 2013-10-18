@@ -14,7 +14,8 @@ namespace :ruby do
     sudo "apt-add-repository --remove -y ppa:brightbox/ruby-ng"
     sudo "apt-add-repository -y ppa:brightbox/ruby-ng-experimental"
     sudo "apt-get -qq update"
-    apt_install "ruby#{ruby_version} rubygems ruby#{ruby_version}-dev"
+    apt_install "ruby#{ruby_version} ruby#{ruby_version}-dev"
+    apt_install 'rubygems' if ruby_version == '1.8'
 
     sudo "gem install bundler --no-rdoc --no-ri"
   end
