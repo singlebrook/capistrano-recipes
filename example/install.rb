@@ -26,7 +26,6 @@ load 'config/install/recipes/webserver/apache2_drupal_vhost'
 
 # Rails stuff
 load 'config/install/recipes/log/logrotate_rails'
-set :ruby_version, 'ruby1.8'
 load 'config/install/recipes/language/ruby'
 # Things that depend on Ruby
 load 'config/install/recipes/appserver/passenger'
