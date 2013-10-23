@@ -38,7 +38,7 @@ Setting up new server(s)
 
 9. Copy the example recipe selection file:
 
-    cp -r config/install/recipes/example/deploy/install.rb config/install.rb
+    cp -r config/install/recipes/example/install.rb config/install.rb
 
   and modify it as necessary for your desired configuration.
 
