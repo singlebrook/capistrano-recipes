@@ -7,7 +7,7 @@ namespace :ruby do
   desc "Install Ruby, Ruby prequisites, Ruby and the Bundler gem"
   task :install, :roles => :app do
     # install prerequisites
-    apt_install 'curl git-core build-essential zlib1g-dev openssl libssl-dev libreadline-dev'
+    apt_install 'curl git-core build-essential zlib1g-dev openssl libssl-dev libreadline-dev python-software-properties'
     if use_rmagick
       apt_install 'imagemagick libmagickcore-dev libmagickwand-dev'
     end
