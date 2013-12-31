@@ -2,6 +2,7 @@
 namespace :nodejs do
   desc "Install the latest release of Node.js"
   task :install, :roles => :app do
+    apt_install 'python-software-properties python g++ make'
     sudo "add-apt-repository -y ppa:chris-lea/node.js"
     sudo "apt-get -qq update"
     sudo "apt-get -yq install nodejs"
