@@ -13,6 +13,14 @@ namespace :postgresql do
     sudo 'apt-get -qq update'
     apt_install 'postgresql', :roles => :db
     apt_install 'libpq-dev' # All servers need to be able to compile against this
+
+    # Change the encoding of the template1 database to UTF8
+    run %q(sudo -u postgres psql -c "update pg_database set datallowconn = TRUE where datname = 'template0';")
+    run %q(sudo -u postgres psql -c "update pg_database set datistemplate = FALSE where datname = 'template1';")
+    run %q(sudo -u postgres psql -c "drop database template1;")
+    run %q(sudo -u postgres psql -c "create database template1 with template = template0 encoding = 'UTF8' LC_CTYPE = 'en_US.utf8' LC_COLLATE = 'en_US.utf8';")
+    run %q(sudo -u postgres psql -c "update pg_database set datistemplate = TRUE where datname = 'template1';")
+    run %q(sudo -u postgres psql -c "update pg_database set datallowconn = FALSE where datname = 'template0';")
   end
   after "deploy:install", "postgresql:install"
 
