@@ -12,7 +12,14 @@ Usage
 Setting up new server(s)
 ------
 
-1. If capistrano will be used for app deployment, add `capistrano` and `capistrano-ext` to the :development section of your Gemfile and run `bundle install`. Otherwise, run `gem install capistrano capistrano-ext` if you're just using capistrano for server setup.
+1. If capistrano will be used for app deployment, add the following to the :development section of your Gemfile:
+
+    ```
+    gem 'capistrano', '~> 2.0'
+    gem 'capistrano-ext'
+    ```
+
+  and run `bundle install`. Otherwise, run `gem install capistrano -v 2.15.5 capistrano-ext` if you're just using capistrano for server setup.
 2. Run `capify .` to bootstrap your application for Capistrano.
 3. `git submodule add -b ubuntu12.04 git@github.com:singlebrook/capistrano-recipes.git config/install/recipes`
 4. `git submodule update --init`
@@ -32,13 +39,13 @@ Setting up new server(s)
 7. `sudo chmod 440 /etc/sudoers.d/passwordless`
 8. If you're not already using capistrano for deployment, copy the example `config/deploy.rb`:
 
-    cp -r config/install/recipes/example/deploy.rb config/deploy.rb
+  `cp -r config/install/recipes/example/deploy.rb config/deploy.rb`
 
   If you are using capistrano already, review `example/deploy.rb` and make sure you've got all of the necessary settings. You'll definitely need the `load 'config/install.rb'` line.
 
 9. Copy the example recipe selection file:
 
-    cp -r config/install/recipes/example/deploy/install.rb config/install.rb
+  `cp -r config/install/recipes/example/deploy/install.rb config/install.rb`
 
   and modify it as necessary for your desired configuration.
 
