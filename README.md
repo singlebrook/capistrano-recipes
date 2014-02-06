@@ -20,7 +20,7 @@ Setting up new server(s)
     ```
 
   and run `bundle install`. Otherwise, run `gem install capistrano -v 2.15.5 capistrano-ext` if you're just using capistrano for server setup.
-2. Run `capify .` to bootstrap your application for Capistrano.
+2. Run `bundle exec capify .` to bootstrap your application for Capistrano.
 3. `git submodule add -b ubuntu12.04 git@github.com:singlebrook/capistrano-recipes.git config/install/recipes`
 4. `git submodule update --init`
 5. Create yourself a sudoer user on each server:
