@@ -5,6 +5,7 @@
 # Required for all Singlebrook-managed servers
 load 'config/install/recipes/base'
 load 'config/install/recipes/security/firewall'
+load 'config/install/recipes/security/no_root_ssh'
 load 'config/install/recipes/security/fail2ban'
 load 'config/install/recipes/mail/postfix'
 load 'config/install/recipes/mail/root_forwarding'
@@ -22,6 +23,7 @@ load 'config/install/recipes/other/memcached'
 
 # PHP stuff
 load 'config/install/recipes/language/php'
+load 'config/install/recipes/language/php-memcached'
 load 'config/install/recipes/webserver/apache2_drupal_vhost'
 
 # Rails stuff
