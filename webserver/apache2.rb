@@ -5,7 +5,7 @@ namespace :apache2 do
     apt_install 'apache2'
 
     # Disable the default site
-    sudo 'a2dissite default'
+    sudo 'a2dissite 000-default'
 
     put_as_root %Q( # Prevent warning about "Could not reliably determine the server's fully qualified domain name?"
                     ServerName localhost
