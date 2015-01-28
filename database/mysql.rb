@@ -2,7 +2,7 @@
 namespace :mysql do
   desc "Install mysql from package manager"
   task :install, :roles => :db do
-    apt_install 'mysql-server-5.6'
+    apt_install 'mysql-server-5.5'
 
     password = request_root_password
 
